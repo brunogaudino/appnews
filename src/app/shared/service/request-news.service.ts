@@ -7,9 +7,9 @@ export class RequestNewsService {
   constructor (
     private http: HttpClient
   ) {}
-
-  getNews() {
-    return this.http.get("https://hn.algolia.com/api/v1/search_by_date?query=news&tags=story")
+//newes e story
+  getNews( querySubject: string, tagName: string ) {
+    return this.http.get("https://hn.algolia.com/api/v1/search_by_date?query="+querySubject+"&tags="+tagName)
     .map((res: Response) => res);
   }
 }

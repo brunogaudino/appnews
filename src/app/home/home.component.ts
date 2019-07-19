@@ -13,9 +13,14 @@ export class HomeComponent implements OnInit{
   ) {}
   
   ngOnInit(): void {
-    this.getRequestNews.getNews().subscribe(
-      data => { this.news = data, console.log('this news ',this.news) },
-      error => { this.infoError(error) }
+    this.getRequestNews.getNews('news','story').subscribe(
+      data => { 
+        this.news = data, 
+        console.log('this news ',this.news) 
+      },
+      error => { 
+        this.infoError(error) 
+      }
     );
   }
 

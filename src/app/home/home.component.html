@@ -1,13 +1,43 @@
-<h1 style='margin-left: 2%;'>Top news from your favorite communication vehicle!</h1>
-<ul>
+<div class="container">
+  <div class="row text-center">
+
+    <form class="form-signin col-sm-2 col-md-9 col-lg-12">
+
+      <h1 class="h3 mb-3 font-weight-normal">Top news from your favorite communication vehicle!</h1>
+
+      <select id="query-subject" class="custom-select">
+        <option selected>Choose your subject</option>
+        <option value="news">news</option>
+        <option value="dev">dev</option>
+        <option value="node">node</option>
+      </select>
+
+      <select id="tag-name" class="custom-select">
+        <option selected>Choose your tag</option>
+        <option value="story">story</option>
+        <option value="job">job</option>
+      </select>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+  </div>
+</div>
+
+<!--<h1 style='margin-left: 2%;'>Top news from your favorite communication vehicle!</h1>
+<hr>
+ <ul>
   <li *ngFor="let links of news?.hits">
       <h5><a href={{links.url}} target="_blank">{{links.title}}</a></h5>
   </li>
 </ul>
 <div style="text-align:center">
   <hr>
-  <h4>
-    Build with Angular!
-  </h4>
+  <h5>
+    Developer
+  </h5>
+  <a href="https://brunogaudino.github.io/" target="_blank">
+    <img width="60" src="https://brunogaudino.github.io/assets/img/home/logo-bcw.png" alt="Bruno Gaudino's logo">
+  </a>
   <img width="80" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
+</div>-->
