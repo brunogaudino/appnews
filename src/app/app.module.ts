@@ -15,9 +15,9 @@ import { HomeModule } from './home/home.module';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
     HomeModule
   ],
   providers: [RequestNewsService],

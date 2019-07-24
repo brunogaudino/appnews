@@ -1,31 +1,48 @@
 import { Component, OnInit } from "@angular/core";
 import { RequestNewsService } from '../shared/service/request-news.service';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   templateUrl: './home.component.html'
 })
 
 export class HomeComponent implements OnInit{
-  news: {};
+
+  isSearchPage: boolean = false;
+  news: any = {};
+  searchForm: FormGroup;
   
   constructor(
-    private getRequestNews: RequestNewsService
+    private getRequestNews: RequestNewsService,
+    private formBuilder: FormBuilder
   ) {}
   
   ngOnInit(): void {
-    this.getRequestNews.getNews('news','story').subscribe(
-      data => { 
-        this.news = data, 
-        console.log('this news ',this.news) 
-      },
-      error => { 
-        this.infoError(error) 
-      }
-    );
+    this.searchForm = this.formBuilder.group({
+      countryParam: ['country'],
+      categoryParam: ['category']
+    })
+
+    this.submitSearchForm();
   }
 
   infoError(error){
-    console.log('App error',error);
+    console.log('App error ', error);
+    console.log('error status ', error.status);
   }
 
+  submitSearchForm(){
+    const countryName = this.searchForm.get('countryParam').value;
+    const categoryName = this.searchForm.get('categoryParam').value;
+    
+    this.getRequestNews.getNews('top-headlines', countryName, categoryName).subscribe(
+      (data) => {
+        console.log('return news ', data);
+        this.isSearchPage = false;
+        return this.news = data;
+      },
+      error => {this.infoError(error)}
+    )
+  }
+  
 }
