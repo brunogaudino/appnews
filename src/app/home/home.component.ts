@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 export class HomeComponent implements OnInit{
 
-  isSearchPage: boolean = false;
+  isSearchPage: boolean = true;
   news: any = {};
   searchForm: FormGroup;
   
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit{
       categoryParam: ['category']
     })
 
-    this.submitSearchForm();
+    //this.submitSearchForm();
   }
 
   infoError(error){
@@ -38,11 +38,15 @@ export class HomeComponent implements OnInit{
     this.getRequestNews.getNews('top-headlines', countryName, categoryName).subscribe(
       (data) => {
         console.log('return news ', data);
-        this.isSearchPage = false;
+        this.setSearchPage(false);
         return this.news = data;
       },
       error => {this.infoError(error)}
     )
+  }
+
+  setSearchPage(isSearchPage: boolean = true){
+    return this.isSearchPage = isSearchPage;
   }
   
 }
