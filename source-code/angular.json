@@ -120,5 +120,8 @@
         }
       }
     }},
-  "defaultProject": "appnews"
+  "defaultProject": "appnews",
+  "cli": {
+    "analytics": "27d6d4ba-1745-400d-ba94-fec4fa245ebf"
+  }
 }

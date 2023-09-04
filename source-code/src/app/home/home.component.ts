@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { RequestNewsService } from '../shared/service/request-news.service';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
@@ -6,7 +6,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
   templateUrl: './home.component.html'
 })
 
-export class HomeComponent implements OnInit{
+export class HomeComponent{
 
   isSearchPage: boolean = true;
   news: any = {};
@@ -15,16 +15,16 @@ export class HomeComponent implements OnInit{
   constructor(
     private getRequestNews: RequestNewsService,
     private formBuilder: FormBuilder
-  ) {}
-  
-  ngOnInit(): void {
+  ) {
     this.searchForm = this.formBuilder.group({
       countryParam: ['country'],
       categoryParam: ['category']
     })
-
-    //this.submitSearchForm();
   }
+  
+  // ngOnInit(): void {
+  //   //this.submitSearchForm();
+  // }
 
   infoError(error){
     console.log('App error ', error);
