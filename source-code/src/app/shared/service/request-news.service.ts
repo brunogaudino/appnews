@@ -14,7 +14,16 @@ export class RequestNewsService {
      //country = 'us'; // required  parameter
      //category = 'general'; // optional parameter
     //pageSize = 100; // optional parameter
-    return this.http.get("https://newsapi.org/v2/"+typeOfNews+"?" + "country="+country+"&category="+category+"&pageSize="+pageSize+"&apiKey="+ environment.API_KEY)
+    const config = {
+      headers: {
+        'Access-Control-Allow-Origin': 'https://appnews.netlify.app/', // Substitua com o domínio da sua origem permitida
+        // Outros cabeçalhos CORS opcionais
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        'Access-Control-Allow-Credentials': 'true', // Se você estiver usando autenticação com credenciais
+      },
+    };
+    return this.http.get("https://newsapi.org/v2/"+typeOfNews+"?" + "country="+country+"&category="+category+"&pageSize="+pageSize+"&apiKey="+ environment.API_KEY,config)
     .map((res: Response) => res);
   }
 
