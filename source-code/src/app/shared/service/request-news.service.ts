@@ -9,13 +9,13 @@ export class RequestNewsService {
     private http: HttpClient
   ) {}
 
-  getNews( typeOfNews: string = 'top-headlines', country: string, category: string, pageSize: number = 20 ) {
+  getNews( typeOfNews: string, country: string, category: string, pageSize: number = 20 ) {
     // typeOfNews = 'top-headlines'; // required parameter 
      //country = 'us'; // required  parameter
      //category = 'general'; // optional parameter
     //pageSize = 100; // optional parameter
-    const config = environment.HEADERS;
-    return this.http.get("https://newsapi.org/v2/"+typeOfNews+"?" + "country="+country+"&category="+category+"&pageSize="+pageSize+"&apiKey="+ environment.API_KEY,config)
+    
+    return this.http.get("https://newsapi.org/v2/"+typeOfNews+"?" + "country="+country+"&category="+category+"&pageSize="+pageSize+"&apiKey="+ environment.API_KEY, environment.HEADERS)
     .map((res: Response) => res);
   }
 

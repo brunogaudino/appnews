@@ -5,8 +5,44 @@
 export const environment = {
   production: false,
   API_KEY: '78741923813f4e2caac5939f47109dc6',
-  HEADERS: {}
+  HEADERS: {},
+  TYPE_OF_NEWS:[
+    "everything",
+    "top-headlines"
+  ],
+  CATEGORIES:[
+    "business",
+    "entertainment",
+    "general",
+    "health",
+    "science",
+    "sports",
+    "technology",
+  ],
+  COUNTRIES: [{
+    "ae":"United Arab Emirates",
+    "ar":"Argentine",
+    "au":"Australia",
+    "br":"Brazil",
+    "ca":"Canada",
+    "fr":"France",
+    "de":"Germany",
+    "ie":"Ireland",
+    "it":"Italy",
+    "jp":"Japan",
+    "mx":"Mexico",
+    "ru":"Russia",
+    "gb":"Unite Kingdom",
+    "us":"United States"
+  }]
 };
+
+/**
+
+
+
+ */
+
 
 /*
  * For easier debugging in development mode, you can import the following file

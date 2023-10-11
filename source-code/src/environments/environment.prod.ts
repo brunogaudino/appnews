@@ -8,5 +8,34 @@ export const environment = {
       'Access-Control-Allow-Methods': 'GET',
       'Access-Control-Allow-Headers': 'Content-Type, Authorization'
     },
-  }
+  },
+  TYPE_OF_NEWS:[
+    "everything",
+    "top-headlines"
+  ],
+  CATEGORIES:[
+    "business",
+    "entertainment",
+    "general",
+    "health",
+    "science",
+    "sports",
+    "technology",
+  ],
+  COUNTRIES: [{
+    "ae":"United Arab Emirates",
+    "ar":"Argentine",
+    "au":"Australia",
+    "br":"Brazil",
+    "ca":"Canada",
+    "fr":"France",
+    "de":"Germany",
+    "ie":"Ireland",
+    "it":"Italy",
+    "jp":"Japan",
+    "mx":"Mexico",
+    "ru":"Russia",
+    "gb":"Unite Kingdom",
+    "us":"United States"
+  }]
 };

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { RequestNewsService } from '../shared/service/request-news.service';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   templateUrl: './home.component.html'
@@ -22,10 +22,6 @@ export class HomeComponent{
     })
   }
   
-  // ngOnInit(): void {
-  //   //this.submitSearchForm();
-  // }
-
   infoError(error){
     console.log('App error ', error);
     console.log('error status ', error.status);
